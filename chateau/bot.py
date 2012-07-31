@@ -50,7 +50,7 @@ class Bot(object):
             self._nick = params[0] # Update internal nick
         
     def send(self, *data):
-        msg = ' '.join((str(i) for i in data))
+        msg = ' '.join((str(i) for i in data)) + '\r\n'
         logging.debug(msg)
         self.connection.push(msg.encode('utf_8'))
     
